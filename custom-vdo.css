@@ -1,0 +1,56 @@
+/* Supprime le fond noir de la page */
+body, html {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Style des flux vidéos */
+.videoContainer {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Rend les vidéos parfaitement arrondies */
+.videoContainer video {
+    border-radius: 20px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    background: black; /* fallback si la vidéo bug */
+}
+
+/* Style de la plaque du nom */
+.namePlate {
+    background: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    padding: 6px 20px;
+    border-radius: 12px 12px 0 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 120px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Cache les éléments inutiles (barres, boutons) */
+#main-top-bar, #footer, .sceneButtonBar, .directorButtonBar {
+    display: none !important;
+}
+
+/* Animation d'apparition du nom */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
